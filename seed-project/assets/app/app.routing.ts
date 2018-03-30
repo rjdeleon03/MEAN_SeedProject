@@ -1,6 +1,7 @@
 import { Routes, RouterModule } from "@angular/router";
 import { MessagesComponent } from "./messages/messages.component";
 import { AuthenticationComponent } from "./auth/authentication.component";
+import { AUTH_ROUTES } from "./auth/auth.routes";
 
 const APP_ROUTES: Routes = [
     {
@@ -9,10 +10,11 @@ const APP_ROUTES: Routes = [
     },
     {
         path: "auth",
-        component: AuthenticationComponent
+        component: AuthenticationComponent,
+        children: AUTH_ROUTES
     },    
     {
-        path: "*",
+        path: "",
         redirectTo: "/messages",
         pathMatch: "full" // Ensure that only blank path is handled
     }
