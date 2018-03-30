@@ -6,5 +6,9 @@ import { Message } from './messages/message.model';
     templateUrl: './app.component.html'
 })
 export class AppComponent {
-    message: Message = new Message("Some message", "Alice");
+    messages: Message[] = [
+        new Message("Some message", "Alice"),
+        new Message("Another message", "Cindy"),
+        new Message("The third one!", "John")
+    ];
 }
